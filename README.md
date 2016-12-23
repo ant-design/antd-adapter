@@ -24,6 +24,7 @@ import DatePicker from 'antd-adapter/1to2/DatePicker';
 import MonthPicker from 'antd-adapter/1to2/MonthPicker';
 import RangePicker from 'antd-adapter/1to2/RangePicker';
 import TimePicker from 'antd-adapter/1to2/TimePicker';
+import Calendar from 'antd-adapter/1to2/Calendar';
 ````
 
 ## License
