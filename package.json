@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "An adapter which makes newer antd works like old one. DIRTY HACK \\ T^T /",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./1to2 --ext jsx",
+    "eslint-fix": "eslint --fix ./1to2 --ext jsx"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,11 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "enzyme": "^2.7.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.0.0",
+    "eslint-plugin-react": "^6.8.0",
     "jest": "^18.0.0",
     "moment": "^2.17.1",
     "react": "^15.4.1",

@@ -1,9 +1,9 @@
+/* eslint-env jest */
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
 import DatePicker from 'antd/lib/date-picker';
 import DatePickerAdapter from '../DatePicker';
-import Picker from 'rc-calendar/lib/Picker';
 
 describe('DatePicker', () => {
   it('should convert old format to new format', () => {
@@ -38,7 +38,7 @@ describe('DatePicker', () => {
         <DatePickerAdapter
           open
           disabledDate={current => current && current.getTime() > Date.now()}
-        />
+        />,
       );
     }).not.toThrow();
   });

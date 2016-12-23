@@ -1,9 +1,9 @@
+/* eslint-env jest */
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
 import DatePicker from 'antd/lib/date-picker';
 import MonthPickerAdapter from '../MonthPicker';
-import Picker from 'rc-calendar/lib/Picker';
 
 const MonthPicker = DatePicker.MonthPicker;
 
@@ -40,7 +40,7 @@ describe('MonthPicker', () => {
         <MonthPickerAdapter
           open
           disabledDate={current => current && current.getTime() > Date.now()}
-        />
+        />,
       );
     }).not.toThrow();
   });

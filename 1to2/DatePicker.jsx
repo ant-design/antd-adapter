@@ -8,4 +8,4 @@ export default function DatePickerAdapter(props) {
       {...utils.singlePickerPropsAdapter(props, DatePicker.defaultProps)}
     />
   );
-};
+}

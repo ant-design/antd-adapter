@@ -10,4 +10,4 @@ export default function MonthPickerAdapter(props) {
       {...utils.singlePickerPropsAdapter(props, MonthPicker.defaultProps)}
     />
   );
-};
+}
