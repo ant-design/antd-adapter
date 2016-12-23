@@ -1,0 +1,29 @@
+{
+  "name": "antd-adapter",
+  "version": "0.0.0",
+  "description": "An adapter which makes newer antd works like old one. DIRTY HACK \\ T^T /",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ant-design/antd-adapter.git"
+  },
+  "keywords": [
+    "adapter",
+    "antd"
+  ],
+  "author": "Benjy Cui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ant-design/antd-adapter/issues"
+  },
+  "homepage": "https://github.com/ant-design/antd-adapter#readme",
+  "devDependencies": {
+    "antd": "^2.0.0",
+    "jest": "^18.0.0"
+  },
+  "peerDependencies": {
+    "antd": "^2.0.0"
+  }
+}
