@@ -1,5 +1,10 @@
 # antd-adapter
 
+[![](https://img.shields.io/travis/ant-design/antd-adapter.svg?style=flat-square)](https://travis-ci.org/ant-design/antd-adapter)
+[![npm package](https://img.shields.io/npm/v/antd-adapter.svg?style=flat-square)](https://www.npmjs.org/package/antd-adapter)
+[![NPM downloads](http://img.shields.io/npm/dm/antd-adapter.svg?style=flat-square)](https://npmjs.org/package/antd-adapter)
+[![Dependency Status](https://david-dm.org/ant-design/antd-adapter.svg?style=flat-square)](https://david-dm.org/ant-design/antd-adapter)
+
 An adapter which makes newer antd works like old one. DIRTY HACK \\ T^T /
 
 ## Installation
