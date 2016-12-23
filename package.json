@@ -1,12 +1,17 @@
 {
   "name": "antd-adapter",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An adapter which makes newer antd works like old one. DIRTY HACK \\ T^T /",
   "scripts": {
     "test": "jest",
     "lint": "eslint ./1to2 --ext jsx",
-    "eslint-fix": "eslint --fix ./1to2 --ext jsx"
+    "eslint-fix": "eslint --fix ./1to2 --ext jsx",
+    "prepublish": "babel ./1to2 --out-dir ./1to2",
+    "postpublish": "rm ./1to2/*.js"
   },
+  "files": [
+    "1to2"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ant-design/antd-adapter.git"
@@ -23,6 +28,8 @@
   "homepage": "https://github.com/ant-design/antd-adapter#readme",
   "devDependencies": {
     "antd": "^2.0.0",
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
     "babel-jest": "^18.0.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
