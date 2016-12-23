@@ -29,17 +29,11 @@ export function oldFormatToNewFormat(format) {
   }).join('');
 }
 
-export function singlePickerPropsAdapter(props, defaultProps) {
+export function commonPickerPropsAdapter(props, defaultProps) {
   const adapted = { ...props };
   const format = oldFormatToNewFormat(adapted.format || defaultProps.format);
   if (adapted.format) {
     adapted.format = format;
-  }
-  if (adapted.value) {
-    adapted.value = moment(adapted.value, format);
-  }
-  if (adapted.defaultValue) {
-    adapted.defaultValue = moment(adapted.defaultValue, format);
   }
   if (adapted.disabledDate) {
     const usersDisabledDate = adapted.disabledDate;
@@ -47,6 +41,18 @@ export function singlePickerPropsAdapter(props, defaultProps) {
       const currentGregorian = momentToGregorianCalendar(currentMoment);
       return usersDisabledDate(currentGregorian);
     };
+  }
+  return adapted;
+}
+
+export function singlePickerPropsAdapter(props) {
+  const adapted = { ...props };
+  const format = props.format;
+  if (adapted.value) {
+    adapted.value = moment(adapted.value, format);
+  }
+  if (adapted.defaultValue) {
+    adapted.defaultValue = moment(adapted.defaultValue, format);
   }
   if (adapted.onChange) {
     const usersOnChange = adapted.onChange;

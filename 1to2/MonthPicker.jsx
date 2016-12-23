@@ -5,9 +5,8 @@ import * as utils from './utils';
 const MonthPicker = DatePicker.MonthPicker;
 
 export default function MonthPickerAdapter(props) {
-  return (
-    <MonthPicker
-      {...utils.singlePickerPropsAdapter(props, MonthPicker.defaultProps)}
-    />
+  const adaptedProps = utils.singlePickerPropsAdapter(
+    utils.commonPickerPropsAdapter(props, MonthPicker.defaultProps),
   );
+  return <MonthPicker {...adaptedProps} />;
 }
