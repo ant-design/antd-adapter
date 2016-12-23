@@ -36,10 +36,10 @@ describe('DatePicker', () => {
     expect(() => {
       mount(
         <DatePickerAdapter
+          open
           disabledDate={current => current && current.getTime() > Date.now()}
         />
-      ).find(Picker).find('span')
-        .first().simulate('click');
+      );
     }).not.toThrow();
   });
 

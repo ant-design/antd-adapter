@@ -21,6 +21,7 @@ import DatePicker from 'antd-adapter/1to2/DatePicker';
 
 ````jsx
 import DatePicker from 'antd-adapter/1to2/DatePicker';
+import MonthPicker from 'antd-adapter/1to2/MonthPicker';
 ````
 
 ## License
