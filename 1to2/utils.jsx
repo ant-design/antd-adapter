@@ -18,6 +18,11 @@ export function momentToGregorianCalendar(time) {
   return convertedTime; // eslint-disable-line consistent-return
 }
 
+export function momentToDate(time) {
+  if (!time) return;
+  return time.toDate(); // eslint-disable-line consistent-return
+}
+
 export function oldFormatToNewFormat(format) {
   return format.split('').map((c) => {
     if (c === 'y') {
@@ -38,7 +43,7 @@ export function commonPickerPropsAdapter(props, defaultProps) {
   if (adapted.disabledDate) {
     const usersDisabledDate = adapted.disabledDate;
     adapted.disabledDate = function (currentMoment) {
-      const currentGregorian = momentToGregorianCalendar(currentMoment);
+      const currentGregorian = momentToDate(currentMoment);
       return usersDisabledDate(currentGregorian);
     };
   }
@@ -57,7 +62,7 @@ export function singlePickerPropsAdapter(props) {
   if (adapted.onChange) {
     const usersOnChange = adapted.onChange;
     adapted.onChange = function (dateMoment, dateString) {
-      const dateGregorian = momentToGregorianCalendar(dateMoment);
+      const dateGregorian = momentToDate(dateMoment);
       return usersOnChange(dateGregorian, dateString);
     };
   }

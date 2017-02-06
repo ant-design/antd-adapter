@@ -24,8 +24,8 @@ function propsAdapter(props) {
     const usersOnChange = adapted.onChange;
     adapted.onChange = function (dateMoments, dateStrings) {
       const dateGregorians = [
-        utils.momentToGregorianCalendar(dateMoments[0]),
-        utils.momentToGregorianCalendar(dateMoments[1]),
+        utils.momentToDate(dateMoments[0]),
+        utils.momentToDate(dateMoments[1]),
       ];
       return usersOnChange(dateGregorians, dateStrings);
     };

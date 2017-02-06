@@ -32,7 +32,7 @@ describe('DatePicker', () => {
     expect(defaultValue.isSame(new Date(), 'day')).toBe(true);
   });
 
-  it('should convert args in disabledDate to GregorianCalendar', () => {
+  it('should convert args in disabledDate to Date', () => {
     expect(() => {
       mount(
         <DatePickerAdapter
@@ -43,7 +43,7 @@ describe('DatePicker', () => {
     }).not.toThrow();
   });
 
-  it('should convert args in onChange to GregorianCalendar', () => {
+  it('should convert args in onChange to Date', () => {
     expect(() => {
       mount(<DatePickerAdapter onChange={value => console.log(value.getTime())} />)
         .find(DatePicker).prop('onChange')(moment());

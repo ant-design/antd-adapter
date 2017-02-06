@@ -47,7 +47,7 @@ describe('RangePicker', () => {
     expect(defaultValue[1].isSame(new Date(), 'day')).toBe(true);
   });
 
-  it('should convert args in disabledDate to GregorianCalendar', () => {
+  it('should convert args in disabledDate to Date', () => {
     expect(() => {
       mount(
         <RangePickerAdapter
@@ -58,7 +58,7 @@ describe('RangePicker', () => {
     }).not.toThrow();
   });
 
-  it('should convert args in onChange to GregorianCalendar', () => {
+  it('should convert args in onChange to Date', () => {
     expect(() => {
       mount(
         <RangePickerAdapter

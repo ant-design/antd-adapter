@@ -34,7 +34,7 @@ describe('MonthPicker', () => {
     expect(defaultValue.isSame(new Date(), 'month')).toBe(true);
   });
 
-  it('should convert args in disabledDate to GregorianCalendar', () => {
+  it('should convert args in disabledDate to Date', () => {
     expect(() => {
       mount(
         <MonthPickerAdapter
@@ -45,7 +45,7 @@ describe('MonthPicker', () => {
     }).not.toThrow();
   });
 
-  it('should convert args in onChange to GregorianCalendar', () => {
+  it('should convert args in onChange to Date', () => {
     expect(() => {
       mount(<MonthPickerAdapter onChange={value => console.log(value.getTime())} />)
         .find(MonthPicker).prop('onChange')(moment());

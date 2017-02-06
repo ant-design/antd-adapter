@@ -26,7 +26,7 @@ describe('TimePicker', () => {
     expect(defaultValue.isSame(new Date(), 'second')).toBe(true);
   });
 
-  it('should convert args in onChange to GregorianCalendar', () => {
+  it('should convert args in onChange to Date', () => {
     expect(() => {
       mount(<TimePickerAdapter onChange={value => console.log(value.getTime())} />)
         .find(TimePicker).prop('onChange')(moment());
