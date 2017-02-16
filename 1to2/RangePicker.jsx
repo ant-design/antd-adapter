@@ -33,9 +33,12 @@ function propsAdapter(props) {
   return adapted;
 }
 
-export default function RangePickerAdapter(props) {
-  const adaptedProps = propsAdapter(
-    utils.commonPickerPropsAdapter(props, RangePicker.defaultProps),
-  );
-  return <RangePicker {...adaptedProps} />;
+export default class RangePickerAdapter extends React.Component {
+  render() {
+    const props = this.props;
+    const adaptedProps = propsAdapter(
+      utils.commonPickerPropsAdapter(props, RangePicker.defaultProps),
+    );
+    return <RangePicker {...adaptedProps} />;
+  }
 }

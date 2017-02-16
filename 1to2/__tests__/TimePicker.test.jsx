@@ -2,6 +2,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
+import Form from 'antd/lib/form';
 import TimePicker from 'antd/lib/time-picker';
 import TimePickerAdapter from '../TimePicker';
 
@@ -30,6 +31,25 @@ describe('TimePicker', () => {
     expect(() => {
       mount(<TimePickerAdapter onChange={value => console.log(value.getTime())} />)
         .find(TimePicker).prop('onChange')(moment());
+    }).not.toThrow();
+  });
+
+  it('should work with `getFieldDecorator`', () => {
+    const Test = Form.create()(({ form }) => {
+      const { getFieldDecorator } = form;
+      return getFieldDecorator('time')(
+        <TimePickerAdapter
+          open
+          getCalendarContainer={trigger => trigger}
+        />
+      );
+    });
+
+    const wrapper = mount(<Test />);
+    const calendarWrapper = mount(wrapper.find('Trigger').node.getComponent());
+    expect(() => {
+      calendarWrapper.find('.ant-time-picker-panel-select-option-selected')
+        .at(0).simulate('click');
     }).not.toThrow();
   });
 });

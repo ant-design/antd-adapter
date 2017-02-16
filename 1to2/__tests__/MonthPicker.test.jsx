@@ -2,6 +2,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
+import Form from 'antd/lib/form';
 import DatePicker from 'antd/lib/date-picker';
 import MonthPickerAdapter from '../MonthPicker';
 
@@ -49,6 +50,24 @@ describe('MonthPicker', () => {
     expect(() => {
       mount(<MonthPickerAdapter onChange={value => console.log(value.getTime())} />)
         .find(MonthPicker).prop('onChange')(moment());
+    }).not.toThrow();
+  });
+
+  it('should work with `getFieldDecorator`', () => {
+    const Test = Form.create()(({ form }) => {
+      const { getFieldDecorator } = form;
+      return getFieldDecorator('time')(
+        <MonthPickerAdapter
+          open
+          getCalendarContainer={trigger => trigger}
+        />
+      );
+    });
+
+    const wrapper = mount(<Test />);
+    const calendarWrapper = mount(wrapper.find('Trigger').node.getComponent());
+    expect(() => {
+      calendarWrapper.find('.ant-calendar-month-panel-current-cell').simulate('click');
     }).not.toThrow();
   });
 });

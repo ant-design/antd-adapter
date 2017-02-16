@@ -2,6 +2,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
+import Form from 'antd/lib/form';
 import DatePicker from 'antd/lib/date-picker';
 import RangePickerAdapter from '../RangePicker';
 
@@ -65,6 +66,26 @@ describe('RangePicker', () => {
           onChange={value => console.log(value[0].getTime(), value[1].getTime())}
         />,
       ).find(RangePicker).prop('onChange')([moment(), moment()]);
+    }).not.toThrow();
+  });
+
+  it('should work with `getFieldDecorator`', () => {
+    const Test = Form.create()(({ form }) => {
+      const { getFieldDecorator } = form;
+      return getFieldDecorator('time')(
+        <RangePickerAdapter
+          open
+          getCalendarContainer={trigger => trigger}
+        />
+      );
+    });
+
+    const wrapper = mount(<Test />);
+    const calendarWrapper = mount(wrapper.find('Trigger').node.getComponent());
+    expect(() => {
+      calendarWrapper.find('.ant-calendar-today')
+        .simulate('click')
+        .simulate('click');
     }).not.toThrow();
   });
 });
