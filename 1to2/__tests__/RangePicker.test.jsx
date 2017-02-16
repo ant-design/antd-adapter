@@ -76,7 +76,7 @@ describe('RangePicker', () => {
         <RangePickerAdapter
           open
           getCalendarContainer={trigger => trigger}
-        />
+        />,
       );
     });
 

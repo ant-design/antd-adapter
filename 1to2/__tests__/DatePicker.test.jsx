@@ -58,7 +58,7 @@ describe('DatePicker', () => {
         <DatePickerAdapter
           open
           getCalendarContainer={trigger => trigger}
-        />
+        />,
       );
     });
 

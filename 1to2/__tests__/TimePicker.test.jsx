@@ -41,7 +41,7 @@ describe('TimePicker', () => {
         <TimePickerAdapter
           open
           getCalendarContainer={trigger => trigger}
-        />
+        />,
       );
     });
 

@@ -60,7 +60,7 @@ describe('MonthPicker', () => {
         <MonthPickerAdapter
           open
           getCalendarContainer={trigger => trigger}
-        />
+        />,
       );
     });
 
